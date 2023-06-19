@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Define the target network or IP address
+target_network="192.168.0.0/24"
+
+# Define the output file names
+xml_output="scan_net_temp.xml"
+html_output="scan_net_temp.html"
+
+# Perform the Nmap scan and save the results in XML format
+nmap -oX "$xml_output" "$target_network"
+
+# Convert the XML output to HTML format
+xsltproc "$xml_output" -o "$html_output"
+
+# Remove the XML output file
+rm "$xml_output"
+
+echo "Nmap scan completed. Results saved as $html_output."
