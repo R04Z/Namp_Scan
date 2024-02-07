@@ -1,4 +1,4 @@
-
+Zip Password : QEST24
     mkdir scan_net_temp
 
     nmap -A -T4 -oX scan_net_temp/scan_results.xml <target>
